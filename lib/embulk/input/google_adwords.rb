@@ -107,7 +107,7 @@ module Embulk
         return task_report
       end
 
-      API_VERSION = :v201705
+      API_VERSION = :v201809
 
       def query_report_results(query, &block)
         # AdwordsApi::Api
@@ -119,8 +119,8 @@ module Embulk
         # Allowing rows with zero impressions to show is not supported with AWQL.
         adwords.include_zero_impressions = false
 
-        report_utils.get_stream_helper_with_awql(query, 'CSV').each_line do |line|
-          row = line.split(",")
+        report_utils.get_stream_helper_with_awql(query, 'TSV').each_line do |line|
+          row = line.split("\t")
           block.call row
         end
       end
