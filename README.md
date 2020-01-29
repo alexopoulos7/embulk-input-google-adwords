@@ -1,6 +1,7 @@
 # Google AdWords input plugin for Embulk
 
 Embulk input plugin for Google AdWords reports.
+This updates to google adwords library version: v201809
 
 ## Configuration
 ### Authentication
